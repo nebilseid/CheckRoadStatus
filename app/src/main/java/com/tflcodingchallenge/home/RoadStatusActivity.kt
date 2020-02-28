@@ -1,7 +1,9 @@
 package com.tflcodingchallenge.home
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.tflcodingchallenge.App
 import com.tflcodingchallenge.R
@@ -22,7 +24,7 @@ class RoadStatusActivity : AppCompatActivity(), RoadStatusContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_road_status)
 
-        val roadId = et_road_id.text.toString()
+
 
         DaggerStatusComponent.builder()
             .appComponent((application as App).getComponent())
@@ -31,20 +33,24 @@ class RoadStatusActivity : AppCompatActivity(), RoadStatusContract.View {
             .inject(this)
 
         btn_submit.setOnClickListener{
+            val roadId = et_road_id.text.toString()
             statusPresenter.getStatus(roadId)
         }
     }
 
+    override fun showResults(results: List<RoadStatus>) {
+        tv_error.visibility = View.GONE
+        gr_view.visibility = View.VISIBLE
 
-
-    override fun showResults(results: Response) {
-        tv_display_name.text = results.response.get(0).displayName
-        tv_status_severity.text = results.response.get(0).statusSeverity
-        tv_status_severity_description.text = results.response.get(0).statusSeverityDescription
+        tv_display_name.text = results.get(0).displayName
+        tv_status_severity.text = results.get(0).statusSeverity
+        tv_status_severity_description.text = results.get(0).statusSeverityDescription
     }
 
     override fun showError(message: String) {
-        Toast.makeText(this,message, Toast.LENGTH_LONG).show()
+        gr_view.visibility = View.GONE
+        tv_error.visibility = View.VISIBLE
+        tv_error.text = message
     }
 
 

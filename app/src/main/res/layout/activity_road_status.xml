@@ -7,6 +7,13 @@
     android:background="@color/colorBlack"
     tools:context=".home.RoadStatusActivity">
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gr_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_display_name,tv_status_severity,tv_status_severity_description"/>
+
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
@@ -24,6 +31,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
         android:hint= "Road ID"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +96,6 @@
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/et_road_id" />
 
 

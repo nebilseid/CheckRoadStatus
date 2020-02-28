@@ -8,6 +8,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface RoadStatusService {
-    @GET("{roadId}")
-    fun getStatus(@Path("roadId") roadId : String): Observable<Response>
+    @GET("/road/{id}/")
+    fun getStatus(@Path("id") id : String): Observable<List<RoadStatus>>
 }

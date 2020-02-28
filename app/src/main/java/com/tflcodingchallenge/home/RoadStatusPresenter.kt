@@ -14,11 +14,10 @@ class RoadStatusPresenter(
 
     override fun getStatus(roadId: String) {
         compositeDisposable.add(
-            statusService.getStatus(roadId = roadId )
+            statusService.getStatus(id = roadId )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-
-                .subscribe({ view.showResults(it.copy()) },
+                .subscribe({ view.showResults(it) },
                     { failure -> view.showError(failure?.message ?: "An unknown error happened") })
         )
     }

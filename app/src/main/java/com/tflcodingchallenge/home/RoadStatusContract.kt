@@ -5,7 +5,7 @@ import com.tflcodingchallenge.RoadStatus
 
 interface RoadStatusContract {
     interface View {
-        fun showResults(results:Response)
+        fun showResults(results:List<RoadStatus>)
         fun showError(message: String)
     }
 
