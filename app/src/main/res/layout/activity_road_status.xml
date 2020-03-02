@@ -11,16 +11,15 @@
         android:id="@+id/gr_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="tv_display_name,tv_status_severity,tv_status_severity_description"/>
-
+        app:constraint_referenced_ids="tv_display_name,tv_status_severity,tv_status_severity_description" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Please Enter the Road ID"
         android:textColor="@color/colorWhite"
-        android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,76 +27,73 @@
     <EditText
         android:id="@+id/et_road_id"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorWhite"
-        android:hint= "Road ID"
-        android:textAlignment="center"
-        android:textColor="@color/colorBlack"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="35dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        />
+        android:background="@color/colorWhite"
+        android:hint="ROAD ID"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:background="@color/colorPrimary"
-        android:text="GO"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintStart_toEndOf="@id/et_road_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="20dp"
+        android:layout_height="35dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
-        />
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:text="CHECK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_road_id"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/tv_display_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="display name"
-        android:textColor="@color/colorWhite"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_road_id" />
+        app:layout_constraintTop_toBottomOf="@id/et_road_id"
+        tools:text="display name" />
 
     <TextView
         android:id="@+id/tv_status_severity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="status severity"
-        android:textColor="@color/colorWhite"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_display_name" />
+        app:layout_constraintTop_toBottomOf="@id/tv_display_name"
+        tools:text="status severity" />
 
     <TextView
         android:id="@+id/tv_status_severity_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="status severity description"
-        android:textColor="@color/colorWhite"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_status_severity" />
+        app:layout_constraintTop_toBottomOf="@id/tv_status_severity"
+        tools:text="status severity description" />
 
     <TextView
         android:id="@+id/tv_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Please Enter the Road name or ID"
-        android:textColor="@color/colorAccent"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_road_id" />
-
+        app:layout_constraintTop_toBottomOf="@id/et_road_id"
+        tools:text="Please Enter the Road name or ID" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

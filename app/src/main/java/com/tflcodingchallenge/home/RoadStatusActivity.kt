@@ -11,6 +11,7 @@ import com.tflcodingchallenge.Response
 import com.tflcodingchallenge.RoadStatus
 import com.tflcodingchallenge.home.di.DaggerStatusComponent
 import com.tflcodingchallenge.home.di.StatusModule
+import com.tflcodingchallenge.model.ErrorResponse
 import kotlinx.android.synthetic.main.activity_road_status.*
 import javax.inject.Inject
 
@@ -25,20 +26,20 @@ class RoadStatusActivity : AppCompatActivity(), RoadStatusContract.View {
         setContentView(R.layout.activity_road_status)
 
 
-
         DaggerStatusComponent.builder()
             .appComponent((application as App).getComponent())
             .statusModule(StatusModule(this))
             .build()
             .inject(this)
 
-        btn_submit.setOnClickListener{
+        btn_submit.setOnClickListener {
             val roadId = et_road_id.text.toString()
             statusPresenter.getStatus(roadId)
         }
     }
 
     override fun showResults(results: List<RoadStatus>) {
+
         tv_error.visibility = View.GONE
         gr_view.visibility = View.VISIBLE
 
@@ -47,11 +48,16 @@ class RoadStatusActivity : AppCompatActivity(), RoadStatusContract.View {
         tv_status_severity_description.text = results.get(0).statusSeverityDescription
     }
 
-    override fun showError(message: String) {
+    override fun showError(error: String) {
+        val roadId = et_road_id.text.toString()
+
         gr_view.visibility = View.GONE
         tv_error.visibility = View.VISIBLE
-        tv_error.text = message
+
+        if (error == "HTTP 404 ")
+        tv_error.text = getString(R.string.road_not_recognized, roadId)
+        else
+            tv_error.text = error
+
     }
-
-
 }
