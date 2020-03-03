@@ -1,4 +1,3 @@
 package com.tflcodingchallenge.base
 
-interface BaseView {
-}
+interface BaseView

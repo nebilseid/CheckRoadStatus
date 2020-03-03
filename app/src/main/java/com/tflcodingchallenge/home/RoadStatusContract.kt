@@ -1,8 +1,8 @@
 package com.tflcodingchallenge.home
 
-import com.tflcodingchallenge.model.RoadStatus
 import com.tflcodingchallenge.base.BasePresenter
 import com.tflcodingchallenge.base.BaseView
+import com.tflcodingchallenge.model.RoadStatus
 
 interface RoadStatusContract {
     interface View : BaseView {

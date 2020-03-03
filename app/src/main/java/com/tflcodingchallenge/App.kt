@@ -5,7 +5,7 @@ import com.tflcodingchallenge.di.AppComponent
 import com.tflcodingchallenge.di.DaggerAppComponent
 
 
-class App: Application(){
+class App : Application() {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -14,5 +14,6 @@ class App: Application(){
             .build()
 
     }
-    fun getComponent()=appComponent
+
+    fun getComponent() = appComponent
 }

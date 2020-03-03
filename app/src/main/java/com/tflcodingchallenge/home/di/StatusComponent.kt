@@ -5,9 +5,9 @@ import com.tflcodingchallenge.home.RoadStatusActivity
 import dagger.Component
 
 
-@Component(dependencies = [AppComponent::class],modules =[StatusModule::class])
+@Component(dependencies = [AppComponent::class], modules = [StatusModule::class])
 @HomeScope
 
 interface StatusComponent {
-    fun inject (mainActivity: RoadStatusActivity)
+    fun inject(mainActivity: RoadStatusActivity)
 }

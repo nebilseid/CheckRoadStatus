@@ -1,13 +1,13 @@
 package com.tflcodingchallenge.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.tflcodingchallenge.App
 import com.tflcodingchallenge.R
-import com.tflcodingchallenge.model.RoadStatus
 import com.tflcodingchallenge.home.di.DaggerStatusComponent
 import com.tflcodingchallenge.home.di.StatusModule
+import com.tflcodingchallenge.model.RoadStatus
 import kotlinx.android.synthetic.main.activity_road_status.*
 import javax.inject.Inject
 
