@@ -1,8 +1,6 @@
-package com.tflcodingchallenge
+package com.tflcodingchallenge.model
 
 import com.google.gson.annotations.SerializedName
-
-data class Response(val response: List<RoadStatus>)
 
 data class RoadStatus(
 

@@ -8,13 +8,13 @@ import dagger.Provides
 
 
 @Module
-class StatusModule(private val view : RoadStatusContract.View){
+class StatusModule{
 
     @HomeScope
     @Provides
     fun provideStatusPresenter (statusService: RoadStatusService):
             RoadStatusContract.Presenter{
-        return RoadStatusPresenter(statusService,view)
+        return RoadStatusPresenter(statusService)
     }
 
 }
